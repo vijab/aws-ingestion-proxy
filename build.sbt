@@ -57,7 +57,8 @@ javaOptions in run ++= Seq("-Dlogback.configurationFile=logback.xml", "-Dconfig.
 
 dockerExposedPorts := Seq(8080)
 dockerUpdateLatest := true
-dockerRepository := Some("199982716068.dkr.ecr.eu-west-1.amazonaws.com")
+//dockerRepository := Some("199982716068.dkr.ecr.eu-west-1.amazonaws.com")
+dockerRepository := sys.env.get("IMAGE_REPO_URL")
 
 enablePlugins(JavaAppPackaging)
 
