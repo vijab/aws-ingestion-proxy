@@ -34,7 +34,7 @@ trait ProxyRoute extends LazyLogging with HasConfig {
         import io.circe.generic.auto._
         entity(as[JsonProducerRequest]) { r =>
           logger.info(s"From message, ${r.records}")
-          complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, s"Received POST"))
+          complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, s"Received POST from outside."))
         }
       }
     }
