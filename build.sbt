@@ -55,10 +55,12 @@ javaOptions in reStart ++= Seq("-Dlogback.configurationFile=logback.xml", "-Dcon
 
 javaOptions in run ++= Seq("-Dlogback.configurationFile=logback.xml", "-Dconfig.file=src/main/resources/application.conf")
 
+val repoId = sys.env.get("IMAGE_REPO_URL").getOrElse("199982716068")
+
 dockerExposedPorts := Seq(8080)
 dockerUpdateLatest := true
 //dockerRepository := Some("199982716068.dkr.ecr.eu-west-1.amazonaws.com")
-dockerRepository := sys.env.get("IMAGE_REPO_URL")
+dockerRepository := Some(s"$repoId.dkr.ecr.eu-west-1.amazonaws.com")
 
 enablePlugins(JavaAppPackaging)
 
