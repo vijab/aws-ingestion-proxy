@@ -9,7 +9,7 @@ trait PingRoute extends LazyLogging{
 
   val ping: Route = path("ping") {
     get {
-      logger.debug("Received ping.")
+      logger.debug("Received ping. Responding.")
       complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "pong"))
     }
   }
