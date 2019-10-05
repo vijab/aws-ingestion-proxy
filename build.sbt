@@ -13,6 +13,7 @@ libraryDependencies ++= {
   val akkaHttpVersion = "10.1.4"
   val akkaVersion = "2.5.12"
   val macwireVersion = "2.3.1"
+  val awsVersion = "2.9.13"
 
   Seq(
     // typesafe
@@ -38,6 +39,11 @@ libraryDependencies ++= {
     "io.circe" %% "circe-parser" % circeVersion,
     "io.circe" %% "circe-java8" % circeVersion,
     "io.circe" %% "circe-optics" % circeVersion,
+    // AWS
+    "software.amazon.awssdk" % "kinesis" % awsVersion,
+    // Avro
+    "com.sksamuel.avro4s" % "avro4s-core_2.12" % "3.0.1",
+    "org.apache.avro" % "avro" % "1.9.1",
     // TEST
     "org.scalatest" %% "scalatest" % "3.0.1" % Test,
     "org.mockito" % "mockito-all" % "1.10.19" % Test

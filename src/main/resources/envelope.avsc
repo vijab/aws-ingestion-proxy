@@ -1,0 +1,51 @@
+{
+  "type" : "record",
+  "name" : "Envelope",
+  "namespace" : "com.vijai.aws.ingestion.schema",
+  "fields" : [ {
+    "name" : "metadata",
+    "type" : {
+      "type" : "record",
+      "name" : "Metadata",
+      "fields" : [ {
+        "name" : "eventType",
+        "type" : "string"
+      }, {
+        "name" : "eventTypeVersion",
+        "type" : "int"
+      }, {
+        "name" : "fingerprint",
+        "type" : "string"
+      } ]
+    }
+  }, {
+    "name" : "spans",
+    "type" : {
+      "type" : "record",
+      "name" : "Spans",
+      "fields" : [ {
+        "name" : "spans",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "Span",
+            "fields" : [ {
+              "name" : "operationName",
+              "type" : "string"
+            }, {
+              "name" : "startTime",
+              "type" : "long"
+            }, {
+              "name" : "endTime",
+              "type" : "long"
+            } ]
+          }
+        }
+      } ]
+    }
+  }, {
+    "name" : "payload",
+    "type" : "bytes"
+  } ]
+}
